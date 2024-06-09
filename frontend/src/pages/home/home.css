@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .container2 {
+      flex-direction: column;
+      /* height: 50vh; */
+    }
+    
+    .sidebar, .message-container {
+      width: 100%;
+      padding: 10px;
+    }
+  }

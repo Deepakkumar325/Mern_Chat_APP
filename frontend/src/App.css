@@ -1,0 +1,11 @@
+.online-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: lime;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+  }
+  
