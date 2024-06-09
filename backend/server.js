@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 dotenv.config();
-const PORT=5000;
+const PORT= process.env.PORT || 5000;
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js"
@@ -22,13 +22,13 @@ app.use("/api/messages",messageRoutes);
 app.use("/api/users",userRoutes)
 
 // deploment 
-
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname), '/frontend/dist'))
+app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
-app.get("*",(req,res) =>{
-    res.sendFile(path.join(__dirname , 'frontend',"dist","index.html"))
-})
+// Handle all other routes and serve the index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+});
 
 
 server.listen(PORT,()=>{
